@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-""" Fetch data from the corresponding API
-    and show the results visually.
-    API used: https://jsonplaceholder.typicode.com/ """
+"""
+Fetch data from the corresponding API
+and show the results visually.
+API used: https://jsonplaceholder.typicode.com/
+"""
 from sys import argv
 import requests
 
