@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 """
-    Get data from API server
-    https://jsonplaceholder.typicode.com
+    Script that fetches the endpoint https://jsonplaceholder.typicode.com/
+    And process the data
 """
 from sys import argv
 import requests
 
 
 if __name__ == '__main__':
+    """ Get data from API server """
     emp_ID = int(argv[1])
     tasks = requests.get("https://jsonplaceholder.typicode.com/todos",
                         timeout=10).json()
