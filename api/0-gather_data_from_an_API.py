@@ -15,10 +15,12 @@ if __name__ == '__main__':
                         timeout=10).json()
     completed_tasks_list = [i for i in tasks if i.get('completed') and
                             i.get('userId') == int(argv[1])]
+    ts = ""
+    for i in completed_tasks_list:
+        ts += ("\t " + i.get('title') + "\n") if i.get('completed') else ""
     total_tasks = len([i for i in tasks if i['userId'] == int(argv[1])])
-    print("Employee {} is done with tasks({}/{}):"
+    print("Employee {} is done with tasks({}/{}):\n{}"
           .format(user.get('name'),
                   len(completed_tasks_list),
-                  total_tasks))
-    for i in completed_tasks_list:
-        print("\t {}".format(i.get('title')))
+                  total_tasks,
+                  ts[:-1]))
