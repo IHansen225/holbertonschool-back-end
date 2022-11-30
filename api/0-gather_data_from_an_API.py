@@ -17,7 +17,7 @@ if __name__ == '__main__':
     completed_tasks_list = [i for i in tasks if i['completed']
                             is True and i['userId'] == emp_ID]
     total_tasks = len([i for i in tasks if i['userId'] == emp_ID])
-    print("Employee {} is done with tasks\
-    ({}/{}):".format(user['name'], len(completed_tasks_list), total_tasks))
+    print("Employee {} is done with tasks\({}/{}):"
+    .format(user['name'], len(completed_tasks_list), total_tasks))
     for i in completed_tasks_list:
         print("\t " + i['title'])
