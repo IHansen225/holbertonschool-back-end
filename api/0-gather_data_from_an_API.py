@@ -16,6 +16,8 @@ if __name__ == '__main__':
                         timeout=10).json()
     completed_tasks_list = [i for i in tasks if i.get('completed') and
                             i.get('userId') == emp_ID]
+    taskstring = "\t " + "\t ".join(str(i['title'] for i in completed_tasks_list)
+                                    + "\n")
     total_tasks = len([i for i in tasks if i['userId'] == emp_ID])
     print("Employee {} is done with tasks({}/{}):"
           .format(user.get('name'), len(completed_tasks_list), total_tasks))
