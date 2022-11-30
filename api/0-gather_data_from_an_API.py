@@ -5,12 +5,12 @@
 
     AIP used: https://jsonplaceholder.typicode.com/
 """
+
 from sys import argv
 import requests
 
 
 if __name__ == '__main__':
-    """ Fetch data from the corresponding API """
     emp_ID = int(argv[1])
     tasks = requests.get("https://jsonplaceholder.typicode.com/todos",
                         timeout=10).json()
