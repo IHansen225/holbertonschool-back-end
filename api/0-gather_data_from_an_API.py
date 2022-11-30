@@ -23,4 +23,4 @@ if __name__ == '__main__':
           .format(user.get('name'),
                   len(completed_tasks_list),
                   total_tasks,
-                  ts[:-1]))
+                  ts[:-1]), end="")
