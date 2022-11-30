@@ -22,4 +22,4 @@ if __name__ == '__main__':
                   len(completed_tasks_list),
                   total_tasks))
     for i in completed_tasks_list:
-        print("\t " + i.get('title'))
+        print("\t {}".format(i.get('title')))
