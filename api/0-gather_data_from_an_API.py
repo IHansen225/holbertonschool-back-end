@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-""" Fetch data from the corresponding API
+"""
+    Fetch data from the corresponding API
     and show the results visually.
-
-    API used: https://jsonplaceholder.typicode.com/ """
+    API used: https://jsonplaceholder.typicode.com/
+"""
 from sys import argv
 import requests
 
@@ -12,7 +13,6 @@ if __name__ == '__main__':
                         timeout=10).json()
     user = requests.get(f"https://jsonplaceholder.typicode.com/users/{emp_ID}",
                         timeout=10).json()
-
     completed_tasks_list = [i for i in tasks if i['completed']
                             is True and i['userId'] == emp_ID]
     total_tasks = len([i for i in tasks if i['userId'] == emp_ID])
