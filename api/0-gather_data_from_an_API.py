@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 """
-    Script that fetches the endpoint https://jsonplaceholder.typicode.com/
-    And process the data
+    Fetch data from the corresponding API
+    and show the results visually.
+
+    AIP used: https://jsonplaceholder.typicode.com/
 """
 from sys import argv
 import requests
 
 
 if __name__ == '__main__':
-    """ Get data from API server """
     emp_ID = int(argv[1])
     tasks = requests.get("https://jsonplaceholder.typicode.com/todos",
                         timeout=10).json()
