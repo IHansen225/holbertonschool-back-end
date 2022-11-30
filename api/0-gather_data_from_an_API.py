@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-"""
-    Fetch data from the corresponding API
+""" Fetch data from the corresponding API
     and show the results visually.
-    API used: https://jsonplaceholder.typicode.com/
-"""
-import requests
+    API used: https://jsonplaceholder.typicode.com/ """
 from sys import argv
+import requests
 
 if __name__ == '__main__':
     emp_ID = int(argv[1])
