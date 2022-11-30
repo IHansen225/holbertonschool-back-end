@@ -14,10 +14,11 @@ if __name__ == '__main__':
     user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
                         .format(emp_ID),
                         timeout=10).json()
-    completed_tasks_list = [i for i in tasks if i['completed']
-                            is True and i['userId'] == emp_ID]
+    completed_tasks_list = [i for i in tasks if i.get('completed')
+                            and i.get('userId') == emp_ID]
     total_tasks = len([i for i in tasks if i['userId'] == emp_ID])
-    print("Employee {} is done with tasks\({}/{}):"
-          .format(user['name'], len(completed_tasks_list), total_tasks))
+    print("Employee {} is done with tasks({}/{}):"
+          .format(user.get('name'), len(completed_tasks_list), total_tasks))
     for i in completed_tasks_list:
         print("\t " + i['title'])
+
