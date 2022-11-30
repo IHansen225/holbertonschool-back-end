@@ -14,8 +14,8 @@ if __name__ == '__main__':
                         .format(int(argv[1])),
                         timeout=10).json()
     completed_tasks_list = [i for i in tasks if i.get('completed') and
-                            i.get('userId') == emp_ID]
-    total_tasks = len([i for i in tasks if i['userId'] == emp_ID])
+                            i.get('userId') == int(argv[1])]
+    total_tasks = len([i for i in tasks if i['userId'] == int(argv[1])])
     print("Employee {} is done with tasks({}/{}):"
           .format(user.get('name'),
                   len(completed_tasks_list),
