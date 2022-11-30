@@ -4,8 +4,8 @@ Fetch data from the corresponding API
 and show the results visually.
 API used: https://jsonplaceholder.typicode.com/
 """
-from sys import argv
 import requests
+from sys import argv
 
 if __name__ == '__main__':
     emp_ID = int(argv[1])
