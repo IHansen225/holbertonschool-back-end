@@ -12,11 +12,11 @@ if __name__ == '__main__':
     user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
                         .format(int(argv[1]))).json()
     csvs = ""
-    uname = user.get('username')
+    uname = str(user.get('username'))
     uid = str(argv[1])
     for i in tasks:
         if i.get('userId') == int(argv[1]):
-            csvs += ("\"{}\", \"{}\", \"{}\", \"{}\""
+            csvs += ("\"{}\", \"{}\", \"{}\", \"{}\"\n"
                      .format(uid, uname, i.get('completed'), i.get('title')))
     with open("{}.csv".format(uid), "w", encoding="UTF-8") as f:
         f.write(csvs)
