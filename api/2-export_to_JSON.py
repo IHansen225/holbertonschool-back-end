@@ -21,6 +21,6 @@ if __name__ == '__main__':
             "completed": i.get('completed'),
             "username": "{}".format(uname)
         })
-    jdump = {"{}".format(uid): tlist}
+    jdump = str({"{}".format(uid): tlist})
     with open("{}.csv".format(uid), "w", encoding="UTF-8") as f:
-        f.write(json.dumps(jdump))
+        f.write(jdump)
