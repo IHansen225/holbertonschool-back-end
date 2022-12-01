@@ -15,7 +15,8 @@ if __name__ == '__main__':
     for u in user:
         tlst = [{"task": t.get('title'),
                  "completed": t.get('completed'),
-                 "username": u.get('username')} for t in tasks if t.get('userId') == u.get('id')]
+                 "username": u.get('username')} for t in tasks
+                if t.get('userId') == u.get('id')]
         all_dump["{}".format(u.get('id'))] = tlst
     with open("todo_all_employees.json", "w", encoding="UTF-8") as f:
         json.dump(all_dump, f)
