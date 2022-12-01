@@ -17,5 +17,6 @@ if __name__ == '__main__':
     for i in tasks:
         if i.get('userId') == int(argv[1]):
             csvs += ("{}, {}, {}, {}\n"
-            .format(uid, uname, i.get('completed'), i.get('title')))
-    print(csvs)
+                     .format(uid, uname, i.get('completed'), i.get('title')))
+    with open("{}.csv".format(uid), "w", encoding="UTF-8") as f:
+        f.write(csvs)
