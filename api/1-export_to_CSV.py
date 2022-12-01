@@ -16,7 +16,7 @@ if __name__ == '__main__':
     uid = str(argv[1])
     for i in tasks:
         if i.get('userId') == int(argv[1]):
-            csvs += ("\"{}\", \"{}\", \"{}\", \"{}\"\n"
+            csvs += ("\"{}\",\"{}\",\"{}\",\"{}\"\n"
                      .format(uid, uname, i.get('completed'), i.get('title')))
     with open("{}.csv".format(uid), "w", encoding="UTF-8") as f:
         f.write(csvs)
