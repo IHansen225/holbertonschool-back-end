@@ -12,15 +12,9 @@ if __name__ == '__main__':
     tasks = requests.get("https://jsonplaceholder.typicode.com/todos").json()
     user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
                         .format(int(argv[1]))).json()
-    tlist = []
-    uname = str(user.get('username'))
-    uid = str(argv[1])
-    for i in tasks:
-        tlist.append({
-            "task": "{}".format(i.get('title')),
-            "completed": i.get('completed'),
-            "username": "{}".format(uname)
-        })
-    jdump = str({"{}".format(uid): tlist})
-    with open("{}.csv".format(uid), "w", encoding="UTF-8") as f:
-        f.write(jdump)
+    jdump = {"{}".format(int(argv[1])):
+             [{"task": task.get("title"),
+               "completed": task.get("completed"),
+               "username": user.get('name')} for task in tasks]}
+    with open("{}.json".format(int(argv[1])), "w", encoding="UTF-8") as f:
+        json.dump(jdump, f)
