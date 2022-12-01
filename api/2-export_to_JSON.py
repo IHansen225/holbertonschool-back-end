@@ -13,8 +13,8 @@ if __name__ == '__main__':
     user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
                         .format(int(argv[1]))).json()
     jdump = {"{}".format(int(argv[1])):
-             [{"task": task.get("title"),
-               "completed": task.get("completed"),
-               "username": user.get('name')} for task in tasks]}
+             [{"task": task.get('title'),
+               "completed": task.get('completed'),
+               "username": user.get('username')} for task in tasks]}
     with open("{}.json".format(int(argv[1])), "w", encoding="UTF-8") as f:
         json.dump(jdump, f)
